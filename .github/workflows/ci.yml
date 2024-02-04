@@ -38,6 +38,8 @@ jobs:
       - name: "Install dependencies"
         run: make build
       - name: "Run tests"
+        env:
+          TERM: xterm
         run: make test
       - name: "Ensure desktops were created"
         run: grep -r . sandbox/desktops
